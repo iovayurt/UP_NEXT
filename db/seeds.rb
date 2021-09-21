@@ -22,4 +22,4 @@ restaurant3 = Restaurant.create!(name: "Parle", location: "Besiktas Zorlu Center
   puts "Created #{restaurant.name}"
 end
 
-puts "Finished!"rails
+puts "Finished!"
