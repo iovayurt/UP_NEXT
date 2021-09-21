@@ -12,7 +12,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.boolean :admin, default: false
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
-      t.references :restaurant, null: false, foreign_key: true
+
 
       ## Rememberable
       t.datetime :remember_created_at
