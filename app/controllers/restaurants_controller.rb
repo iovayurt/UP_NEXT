@@ -12,6 +12,7 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @order = Order.new
+    @food_items = @restaurant.food_items
   end
 
   private
