@@ -1,0 +1,91 @@
+<h1>My Orders</h1>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Restaurants</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Orders</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="index-header">
+      <h2>My Restaurants</h2>
+    </div>
+
+<section class="wrapper"><% @restaurants.each do |restaurant| %>
+  <div class="container">
+
+<div class="row">
+  <div class="col-sm-4"><div class="card text-white card-has-bg click-col" style="background-image:url('https://images.unsplash.com/photo-1615817198611-3a444017a48f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+         <img class="card-img d-none" src="https://source.unsplash.com/600x900/?computer,design" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+        <div class="card-img-overlay d-flex flex-column">
+         <div class="card-body">
+            <small class="card-meta mb-2">My Restaurants</small>
+            <h4 class="card-title mt-0 "><a class="text-white" herf="#">My Orders</a></h4><br>
+            <h6>Name: <%= restaurant.name %> </h6><br>
+            <h6>Location: <%= restaurant.location %></h6><br>
+            <h6>Rating: <%= restaurant.rating %></h6><br>
+            <h6>Speciality: <%= restaurant.speciality %></h6>
+          </div>
+          <div class="card-footer">
+           <div class="media">
+  <div class="media-body">
+
+
+  </div>
+</div>
+          </div>
+        </div>
+      </div></div>
+
+</div>
+
+</div>
+</section>
+<% end %>
+  </div>
+
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+      <div class="index-header"><h2>My Bookings</h2></div>
+
+ <section class="wrapper"><% @bookings.each do |booking| %>
+  <div class="container">
+
+<div class="row">
+  <div class="col-sm-4"><div class="card text-white card-has-bg click-col" style="background-image:url('https://images.unsplash.com/photo-1615817198611-3a444017a48f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+         <img class="card-img d-none" src="https://source.unsplash.com/600x900/?computer,design" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+        <div class="card-img-overlay d-flex flex-column">
+         <div class="card-body">
+            <small class="card-meta mb-2">My Bookings</small>
+            <h4 class="card-title mt-0 "><a class="text-white" herf="#">My Bookings</a></h4><br>
+            <h6>Booked Chef: <%= booking.chef.first_name %> <%= booking.chef.last_name %></h6><br>
+            <h6>Start Date: <%= booking.start_time %></h6><br>
+            <h6>End Date: <%= booking.end_time %></h6><br>
+            <h6>Total Amount: <%= booking.total_price %></h6>
+
+
+
+
+          </div>
+          <div class="card-footer">
+           <div class="media">
+  <div class="media-body">
+
+
+  </div>
+</div>
+          </div>
+        </div>
+      </div></div>
+
+</div>
+
+</div>
+</section>
+<% end %>
+
+  </div>
+</div>

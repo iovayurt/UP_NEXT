@@ -6,11 +6,12 @@ class OrderItemsController < ApplicationController
     @order_item.quantity = 1
     @order = helpers.current_order
     if @order.nil?
-      @order = Order.create!(user: current_user, restaurant: @food_item.restaurant)
+      @order = Order.create(user: current_user, restaurant: @food_item.restaurant)
+      session[:order_id] = @order.id
     end
     @order_item.order = @order
 
-    if @order_item.save!
+    if @order_item.save
       redirect_to restaurant_path(@food_item.restaurant), notice: 'New item was successfully added.'
     else
       render :new
