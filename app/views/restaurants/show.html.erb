@@ -20,7 +20,12 @@
                       <h6>Category: <%= food_item.category %></h6><br>
                       <h6>Price: <%= food_item.price %> TL</h6><br>
 
-                     <%= link_to 'MENU', restaurant_path(restaurant), class: 'btn chef-btn js-scroll-trigger'%>
+                      <%= simple_form_for [@restaurant, @order_item] do |f| %>
+                        <%= f.input :food_item_id, as: :hidden, input_html: { value: "#{food_item.id}" } %>
+                        <%= f.submit "Add Item", class: 'btn chef-btn js-scroll-trigger'%>
+                      <% end %>
+
+                    <%#= link_to 'Add Item', restaurant_order_items_path(@restaurant, @order_item), method: :post, class: 'btn chef-btn js-scroll-trigger'%>
                   </div>
                 </div>
             </div>
