@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :set_order, only: [:destroy, :update]
+
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @order = Order.new
@@ -11,6 +13,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.total_price = @order.calculate_total_price
 
+
     if @order.save
       redirect_to dashboard_path(), notice: 'Order was successfully created.'
     else
@@ -19,12 +22,20 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    @order = Order.find(params[:id])
     @order.destroy
     redirect_to restaurant_path(@order.list)
   end
 
+  def update
+    @order.update(order_params)
+    redirect_to dashboard_path, notice: 'Order updated.'
+  end
+
+  def set_order
+    @order = Order.find(params[:id])
+  end
+
   def order_params
-    params.require(:order).permit(:reservation_time, :payment_type, :total_price)
+    params.require(:order).permit(:reservation_time, :payment_type, :total_price, :reservation_name)
   end
 end
