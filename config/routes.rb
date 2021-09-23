@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :order_items, only: [ :create ]
   end
   resources :orders, only: [:destroy]
+  resource :dashboard, only: [:show]
 end
