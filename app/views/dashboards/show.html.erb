@@ -1,39 +1,10 @@
 <h1>My Orders</h1>
-
-
 <div class="tab-content" id="myTabContent">
-
-
-
-
- <section class="wrapper"><% @orders.each do |order| %>
   <div class="container">
-
-<div class="row">
-  <div class="col-sm-4"><div class="card text-white card-has-bg click-col" style="background-image:url('https://images.unsplash.com/photo-1615817198611-3a444017a48f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
-         <img class="card-img d-none" src="https://source.unsplash.com/600x900/?computer,design" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-        <div class="card-img-overlay d-flex flex-column">
-         <div class="card-body">
-            <small class="card-meta mb-2">My Reservations</small>
-            <h4 class="card-title mt-0 "><a class="text-white" herf="#">My Reservations</a></h4><br>
-            <h6>Booked Restaurant: <%= order.restaurant.name %> </h6><br>
-            <h6>Reservation Time: <%= order.reservation_time %></h6><br>
-            <h6>Items: <%= order.order_items.count %></h6><br>
-            <h6>Total Amount: <%= order.total_price %></h6>
-          </div>
-          <div class="card-footer">
-           <div class="media">
-  <div class="media-body">
-  </div>
-</div>
-          </div>
-        </div>
-      </div></div>
-</div>
-
-</div>
-</section>
-<% end %>
-
+    <section class="wrapper">
+      <% @orders.each do |order| %>
+          <%= render "shared/order_card", order: order %>
+      <% end %>
+    </section>
   </div>
 </div>

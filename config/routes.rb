@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :restaurants, only: [ :index, :show, :new, :create, :destroy ] do
     resources :order_items, only: [ :create ]
   end
-  resources :orders, only: [:destroy]
+  resources :orders, only: [:destroy, :update]
   resource :dashboard, only: [:show]
 end
