@@ -18,6 +18,7 @@
             <h4 class="card-title mt-0 "><a class="text-white" herf="#">My Reservations</a></h4><br>
             <h6>Booked Restaurant: <%= order.restaurant.name %> </h6><br>
             <h6>Reservation Time: <%= order.reservation_time %></h6><br>
+            <h6>Items: <%= order.order_items.count %></h6><br>
             <h6>Total Amount: <%= order.total_price %></h6>
           </div>
           <div class="card-footer">
