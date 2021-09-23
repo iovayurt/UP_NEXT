@@ -102,6 +102,64 @@ restaurant1_desserts.each_with_index do |name, index|
                    restaurant: restaurant1) # connects it to a specific Restaurant!
 end
 
+restaurant2_main_food_items = [
+  'Octopus Carpaccio',
+  'Homemade fresh Fettuccini',
+  'Grilled Tenderloin',
+  'Peking style Duck',
+  'T-Bone Steak',
+  'Antrikot',
+  'Lamb chops',
+  'Grilled Norwegian Salmon',
+  'Far Eastern style spinach',
+  'Garden Greens Salad',
+  'Sunset Caesar Salad'
+]
+restaurant2_desserts = [
+  'Sunset San Sebastián Cheesecake',
+  'Ice Cream Types',
+  'Sorbet Types'
+]
+restaurant_food_item_category = [
+  'drinks',
+  'desserts',
+  'starters',
+  'main courses'
+]
+restaurant_main_food_item_info = [
+  'Octopus with chinese radish, ginger cucumber slices, celery stalk and ponzu soy sauce',
+  'Fettuccini with shrimp and lemongrass bolognese',
+  'Chicken Grilled Tenderloin with yuzu mustard sauce',
+  'Duck with julienne cucumber and green onion, warm lavash, lime, coriander and hoisin sauce',
+  '500 gr. T-Bone Steak',
+  '400 gr. Antrikot',
+  '300 gr. Lamb chops',
+  'Salmon with wild mushroom risotto, celery stalk, Asian red wine sauce, yuzu foam and lime powder',
+  'Mediterranean greens with beetroot, avocado, pine nuts, coriander,cucumber and pomegranate sauce dressing',
+  'spinach with ginger, sesame oil, lime, teriyaki sauce, sesame and chili pepper',
+  'Mediterranean greens with parmesan tempura and micro basil',
+  'Mediterranean greens, feta cheese, black olives, corn'
+]
+restaurant_food_item_dessert_info = [
+  'San Sebastián Cheesecake with orange crumbs and pumpkin crunch',
+  'Caramel, Chocolate, Vanilla',
+  'Lemon, Mango, Forest fruits'
+]
+#Create main foods
+restaurant2_main_food_items.each_with_index do |name, index|
+  FoodItem.create!(name: name, rating: rand(4..5), price: rand(50..70),
+                   category: "Main Course",
+                   description: restaurant_main_food_item_info[index],
+                   restaurant: restaurant2) # connects it to a specific Restaurant!
+end
+#Create desserts
+restaurant2_desserts.each_with_index do |name, index|
+  FoodItem.create!(name: name, rating: rand(4..5), price: rand(40..50),
+                   category: "Dessert",
+                   description: restaurant_food_item_dessert_info[index],
+                   restaurant: restaurant2) # connects it to a specific Restaurant!
+end
+
 #create 10 9 orders 3 per resto
 
 #Restaurant.all.each do |restaurant|
