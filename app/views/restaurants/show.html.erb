@@ -1,12 +1,12 @@
 <h1>Restaurant Menu</h1>
 
 
-<section class="wrapper">
+
   <div class="container">
 
-    <div class="row">
+    <div class="grid-3">
       <% @food_items.each do |food_item| %>
-        <div class="col-sm-4">
+
           <div class="card text-black card-has-bg click-col" style="background-image:url('https://images.unsplash.com/photo-1551218808-94e220e084d2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80');">
                 <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 
@@ -29,8 +29,7 @@
                   </div>
                 </div>
             </div>
-        </div>
 
-      <% end %>
+        <% end %>
+      </div>
   </div>
-</section>

@@ -24,12 +24,12 @@ restaurant1 = Restaurant.create!(name: "Vogue Restaurant and Bar",
                                  capacity: 150)
 restaurant2 = Restaurant.create!(name: "Sunset Grill and Bar",
                                  location: "Besiktas, Istanbul, Turkey",
-                                 rating: 4.3,
+                                 rating: 4.2,
                                  speciality: "Mediterranean",
                                  capacity: 170)
 restaurant3 = Restaurant.create!(name: "Parle",
                                  location: "Besiktas, Istanbul, Turkey",
-                                 rating: 4.2,
+                                 rating: 4.5,
                                  speciality: "International Gourmet",
                                  capacity: 50)
 
@@ -40,9 +40,26 @@ end
 #create 30 food items 10 for each resto
 
 # Food items for restaurant1
-restaurant1_food_item_names = [
-  'Hamburger',
-  'Waldorf Salad'
+restaurant1_main_food_items = [
+  'American Burger',
+  'Vegetarian Meatballs',
+  'Spaghetti with Bolognese Sauce',
+  'Mushroom Spaghetti',
+  'Roasted Eggplant Pasta',
+  'Mixed Pizza',
+  'Roast Beef Pizza',
+  'Chicken Schnitzel',
+  'Mexican Chicken',
+  'Chicken Curry Salad',
+  'Greek Salad'
+
+
+]
+restaurant1_desserts = [
+  'Mr. Joe',
+  'Pyramid Mosaic Cake'
+
+
 ]
 restaurant_food_item_category = [
   'drinks',
@@ -50,15 +67,38 @@ restaurant_food_item_category = [
   'starters',
   'main courses'
 ]
-restaurant_food_item_info = [
-  'vegan',
-  'has nats',
-  'pork'
+restaurant_main_food_item_info = [
+  'Grilled meatballs, onion rings, tomatoes, lettuce, pickles in burger bread',
+  'Breaded special homemade vegetable meatballs with garnish',
+  'Tomato sauce with minced meat, parmesan cheese',
+  'Mushroom, parmesan Cheese',
+  'Roasted eggplant, parmesan cheese',
+  'Special dough, sauce, pizza cheese, salami, sausage, mushroom, tomato, green pepper',
+  'Special dough, sauce, cheese, roast beef slices, parmesan cheese, rocket',
+  'Special breaded chicken tenderloin with garnish',
+  'Mexican vegetables, Mexican chicken fillet strips, cheddar cheese, with garnish',
+  'Mushroom, Parmesan Cheese',
+  'Mediterranean greens, marinated chicken strips, curry sauce, black olives, corn',
+  'Mediterranean greens, feta cheese, black olives, corn',
 ]
-restaurant1_food_item_names.each do |name|
-  FoodItem.create!(name: name, rating: 4, price: 5,
-                   category: restaurant_food_item_category.sample,
-                   description: restaurant_food_item_info.sample,
+
+restaurant_food_item_dessert_info = [
+  'Chocolate cake',
+  'Biscuits, chocolate'
+]
+#Create main foods
+restaurant1_main_food_items.each_with_index do |name, index|
+  FoodItem.create!(name: name, rating: rand(3..5), price: rand(30..60),
+                   category: "Main Course",
+                   description: restaurant_main_food_item_info[index],
+                   restaurant: restaurant1) # connects it to a specific Restaurant!
+end
+
+#Create desserts
+restaurant1_desserts.each_with_index do |name, index|
+  FoodItem.create!(name: name, rating: rand(3..5), price: rand(30..50),
+                   category: "Dessert",
+                   description: restaurant_food_item_dessert_info[index],
                    restaurant: restaurant1) # connects it to a specific Restaurant!
 end
 
