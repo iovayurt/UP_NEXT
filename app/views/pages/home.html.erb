@@ -1,3 +1,25 @@
 <h1>Up Next</h1>
 <p>Welcome to home page</p>
 <%= link_to 'OUR RESTAURANTS', restaurants_path, class: 'btn js-scroll-trigger' %>
+<%= form_tag restaurants_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a restaurant"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+<div id="cover">
+  <form method="get" action="restaurants">
+    <div class="tb">
+      <div class="td"><input type="text" placeholder="Search" required></div>
+      <div class="td" id="s-cover">
+        <button type="submit">
+          <div id="s-circle"></div>
+
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
