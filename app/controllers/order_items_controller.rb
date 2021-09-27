@@ -6,7 +6,7 @@ class OrderItemsController < ApplicationController
     @order_item.quantity = 1
     @order = helpers.current_order
     if @order.nil?
-      @order = Order.create(user: current_user, restaurant: @food_item.restaurant)
+      @order = Order.create(user: current_user, restaurant: @food_item.restaurant, completed: false)
       session[:order_id] = @order.id
     end
     @order_item.order = @order

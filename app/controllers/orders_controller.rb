@@ -36,6 +36,6 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:reservation_time, :payment_type, :total_price, :reservation_name)
+    params.require(:order).permit(:reservation_time, :payment_type, :total_price, :reservation_name, :notes)
   end
 end

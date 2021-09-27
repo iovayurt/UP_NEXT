@@ -5,6 +5,7 @@ class Order < ApplicationRecord
   has_many :food_items, through: :order_items
   #validates :reservation_time, presence: true
   #validates :payment_type, presence: true
+  after_commit :update_completed, if: :saved_change_to_reservation_time?
 
   def calculate_total_price
     prices = order_items.map do |order_item|
@@ -13,5 +14,10 @@ class Order < ApplicationRecord
       quantity * price
     end
     prices.sum
+  end
+
+  def update_completed
+    self.completed = true
+    self.save
   end
 end
