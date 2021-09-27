@@ -22,8 +22,9 @@ class OrdersController < ApplicationController
   end
 
   def destroy
+    @order = Order.find(params[:id])
     @order.destroy
-    redirect_to restaurant_path(@order.list)
+    redirect_to dashboard_path, notice: 'Order successfully deleted.'
   end
 
   def update
