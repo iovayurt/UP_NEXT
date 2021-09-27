@@ -4,8 +4,15 @@
     outline: none;
 }
 
+.back-ground {
+   height: 100%;
+   margin-top: 100px;
+
+}
+
 .home-div {
   text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
 }
 
 html, body
@@ -74,6 +81,5 @@ button
 }
 
 .hometitle {
-  margin-top: 150px;
-  margin-bottom: 30px;
+  color: #fff;
 }

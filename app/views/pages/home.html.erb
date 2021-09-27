@@ -1,20 +1,20 @@
-<div class="home-div">
-  <h1 class="hometitle">Up Next</h1>
-  <p>
-    Do you want your meal ready in front of you when you go to the restaurant? <br>
-    Up-Next is just for you</p>
+<div class="back-ground">
+    <h1 class="hometitle">Up Next</h1>
+    <p>
+      Do you want your meal ready in front of you when you go to the restaurant? <br>
+      Up-Next is just for you</p>
 
 
-  <div>
-    <%= form_tag restaurants_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a restaurant",
-        submit_tag: "Search", class: "btn btn-primary"
-      %>
-    <% end %>
-    </form>
-    <%= link_to 'OUR RESTAURANTS', restaurants_path, class: 'btn js-scroll-trigger' %>
-  </div>
+    <div>
+      <%= form_tag restaurants_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a restaurant",
+          submit_tag: "Search", class: "btn btn-primary"
+        %>
+      <% end %>
+      </form>
+      <%= link_to 'OUR RESTAURANTS', restaurants_path, class: 'btn js-scroll-trigger' %>
+    </div>
 </div>
