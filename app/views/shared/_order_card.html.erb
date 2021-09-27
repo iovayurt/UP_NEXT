@@ -3,7 +3,7 @@
   <h6>Booked Restaurant: <%= order.restaurant.name %> </h6>
   <h6>Reservation Name: <%= order.reservation_name %></h6>
   <h6>Reservation Time: <%= order.reservation_time %></h6>
-  <h6>Your:
+  <h6>Your Order:
     <% order.order_items.each do |order_item| %>
       - <%= order_item.food_item.name %>
     <% end %>
@@ -15,7 +15,8 @@
     <%= f.input :reservation_name %>
     <%= f.input :notes %>
     <%= f.submit class: "btn" %>
+     <%= link_to 'Delete Order', order_path(order), class: "btn", confirm: 'Are you sure?', method: :delete %>
   <% end %>
 
-  <%= link_to 'Delete Order', order_path(order), class: "btn", confirm: 'Are you sure?', method: :delete %>
+
 </div>
