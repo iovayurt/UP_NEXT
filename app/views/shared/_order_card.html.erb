@@ -1,9 +1,11 @@
 <div class="card-body dashboard">
   <h5 class="card-meta mb-2">My Reservations</h5>
   <h6>Booked Restaurant: <%= order.restaurant.name %> </h6>
+  <h6>Reservation Name: <%= order.reservation_name %></h6>
   <h6>Reservation Time: <%= order.reservation_time %></h6>
   <h6>Items: <%= order.order_items.count %></h6>
   <h6>Total Amount: <%= order.calculate_total_price %> TL</h6>
+  <h6>Reservation Note: <%= order.notes %></h6>
   <%= simple_form_for order do |f| %>
     <%= f.input :reservation_time %>
     <%= f.input :reservation_name %>
