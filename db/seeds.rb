@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning database..."
 OrderItem.destroy_all
 Order.destroy_all
@@ -19,17 +12,17 @@ user3 = User.create!(first_name: "Aziz", last_name: "Alansari", password: "passw
 
 restaurant1 = Restaurant.create!(name: "Vogue Restaurant and Bar",
                                  location: "Besiktas, Istanbul, Turkey",
-                                 rating: 4.4,
+                                 rating: 4.3,
                                  speciality: "International",
                                  capacity: 150)
 restaurant2 = Restaurant.create!(name: "Sunset Grill and Bar",
-                                 location: "Besiktas, Istanbul, Turkey",
-                                 rating: 4.2,
+                                 location: "Nisantasi, Istanbul, Turkey",
+                                 rating: 4.6,
                                  speciality: "Mediterranean",
                                  capacity: 170)
 restaurant3 = Restaurant.create!(name: "Parle",
-                                 location: "Besiktas, Istanbul, Turkey",
-                                 rating: 4.5,
+                                 location: "Kadikoy, Istanbul, Turkey",
+                                 rating: 4.7,
                                  speciality: "International Gourmet",
                                  capacity: 50)
 
@@ -37,64 +30,92 @@ restaurant3 = Restaurant.create!(name: "Parle",
   puts "Created #{restaurant.name}"
 end
 
-#create 30 food items 10 for each resto
+# create 30 food items 10 for each resto
 
 # Food items for restaurant1
+
+restaurant1_starters = [
+  'Vegetarian Meatballs',
+  'Chicken Curry Salad',
+  'Greek Salad'
+]
+
 restaurant1_main_food_items = [
   'American Burger',
-  'Vegetarian Meatballs',
   'Spaghetti with Bolognese Sauce',
   'Mushroom Spaghetti',
   'Roasted Eggplant Pasta',
   'Mixed Pizza',
   'Roast Beef Pizza',
   'Chicken Schnitzel',
-  'Mexican Chicken',
-  'Chicken Curry Salad',
-  'Greek Salad'
-
-
+  'Mexican Chicken'
 ]
+
 restaurant1_desserts = [
   'Mr. Joe',
   'Pyramid Mosaic Cake'
-
-
 ]
+
+restaurant1_drinks = [
+  'Watermelon Chiller',
+  'Pineapple Infused Martini'
+]
+
 restaurant_food_item_category = [
   'drinks',
   'desserts',
   'starters',
   'main courses'
 ]
+
+restaurant_starter_info = [
+
+  'Breaded special homemade vegetable meatballs with garnish',
+  'Mediterranean greens, marinated chicken strips, curry sauce, black olives, corn',
+  'Mediterranean greens, feta cheese, black olives, corn'
+
+]
 restaurant_main_food_item_info = [
   'Grilled meatballs, onion rings, tomatoes, lettuce, pickles in burger bread',
-  'Breaded special homemade vegetable meatballs with garnish',
-  'Tomato sauce with minced meat, parmesan cheese',
-  'Mushroom, parmesan Cheese',
-  'Roasted eggplant, parmesan cheese',
+  'Spagetti with tomato sauce with minced meat, parmesan cheese',
+  'Spagetti with mushroom and parmesan Cheese',
+  'Penne with roasted eggplant, parmesan cheese',
   'Special dough, sauce, pizza cheese, salami, sausage, mushroom, tomato, green pepper',
   'Special dough, sauce, cheese, roast beef slices, parmesan cheese, rocket',
   'Special breaded chicken tenderloin with garnish',
-  'Mexican vegetables, Mexican chicken fillet strips, cheddar cheese, with garnish',
-  'Mushroom, Parmesan Cheese',
-  'Mediterranean greens, marinated chicken strips, curry sauce, black olives, corn',
-  'Mediterranean greens, feta cheese, black olives, corn',
+  'Mexican vegetables, Mexican chicken fillet strips, cheddar cheese, with garnish'
 ]
 
 restaurant_food_item_dessert_info = [
-  'Chocolate cake',
-  'Biscuits, chocolate'
+  'Hot chocolate cake',
+  'Cake with biscuits and chocolate'
 ]
-#Create main foods
+
+restaurant_food_item_drink_info = [
+  'Hendricks gin, fresh watermelon and cucumber, & club soda',
+  'Secret recipe made with our pineapple infused Vodka'
+]
+
+# Create starters
+
+restaurant1_starters.each_with_index do |name, index|
+  FoodItem.create!(name: name, rating: rand(3..5), price: rand(30..50),
+                   category: "Starter",
+                   description: restaurant_starter_info[index],
+                   restaurant: restaurant1) # connects it to a specific Restaurant!
+end
+
+# Create main foods
+
 restaurant1_main_food_items.each_with_index do |name, index|
-  FoodItem.create!(name: name, rating: rand(3..5), price: rand(30..60),
+  FoodItem.create!(name: name, rating: rand(4..5), price: rand(40..60),
                    category: "Main Course",
                    description: restaurant_main_food_item_info[index],
                    restaurant: restaurant1) # connects it to a specific Restaurant!
 end
 
-#Create desserts
+# Create desserts
+
 restaurant1_desserts.each_with_index do |name, index|
   FoodItem.create!(name: name, rating: rand(3..5), price: rand(30..50),
                    category: "Dessert",
@@ -102,23 +123,43 @@ restaurant1_desserts.each_with_index do |name, index|
                    restaurant: restaurant1) # connects it to a specific Restaurant!
 end
 
-restaurant2_main_food_items = [
+# Create drinks
+
+restaurant1_drinks.each_with_index do |name, index|
+  FoodItem.create!(name: name, rating: rand(3..5), price: rand(25..40),
+                   category: "Drink",
+                   description: restaurant_food_item_drink_info[index],
+                   restaurant: restaurant1) # connects it to a specific Restaurant!
+end
+
+# Food items for restaurant 2
+
+restaurant2_starters = [
   'Octopus Carpaccio',
-  'Homemade fresh Fettuccini',
-  'Grilled Tenderloin',
-  'Peking style Duck',
-  'T-Bone Steak',
-  'Antrikot',
-  'Lamb chops',
-  'Grilled Norwegian Salmon',
-  'Far Eastern style spinach',
   'Garden Greens Salad',
   'Sunset Caesar Salad'
 ]
+
+restaurant2_main_food_items = [
+  'Homemade Fresh Fettuccini',
+  'Grilled Tenderloin',
+  'Peking Style Duck',
+  'T-Bone Steak',
+  'Beef Ribeye',
+  'Lamb Chops',
+  'Grilled Norwegian Salmon',
+  'Far Eastern Style Spinach'
+]
 restaurant2_desserts = [
-  'Sunset San Sebastián Cheesecake',
-  'Ice Cream Types',
-  'Sorbet Types'
+  'Sunset Cheesecake',
+  'Ice Cream',
+  'Sorbet'
+]
+
+restaurant2_drinks = [
+  'Sweet Summertini',
+  'MojitaRita',
+  'Tidal Wave'
 ]
 restaurant_food_item_category = [
   'drinks',
@@ -126,33 +167,54 @@ restaurant_food_item_category = [
   'starters',
   'main courses'
 ]
-restaurant_main_food_item_info = [
+
+restaurant_starter_info = [
   'Octopus with chinese radish, ginger cucumber slices, celery stalk and ponzu soy sauce',
+  'Mediterranean greens with parmesan tempura and micro basil',
+  'Mediterranean greens with beetroot, avocado, coriander and pomegranate sauce dressing'
+]
+
+restaurant_main_food_item_info = [
   'Fettuccini with shrimp and lemongrass bolognese',
-  'Chicken Grilled Tenderloin with yuzu mustard sauce',
+  'Chicken grilled tenderloin with yuzu mustard sauce',
   'Duck with julienne cucumber and green onion, warm lavash, lime, coriander and hoisin sauce',
   '500 gr. T-Bone Steak',
-  '400 gr. Antrikot',
-  '300 gr. Lamb chops',
-  'Salmon with wild mushroom risotto, celery stalk, Asian red wine sauce, yuzu foam and lime powder',
-  'Mediterranean greens with beetroot, avocado, pine nuts, coriander,cucumber and pomegranate sauce dressing',
-  'spinach with ginger, sesame oil, lime, teriyaki sauce, sesame and chili pepper',
-  'Mediterranean greens with parmesan tempura and micro basil',
-  'Mediterranean greens, feta cheese, black olives, corn'
+  '400 gr. beef ribeye',
+  '300 gr. lamb chops',
+  'Salmon with wild mushroom risotto, celery stalk, Asian red wine sauce, yuzu foam',
+  'Spinach with ginger, sesame oil, lime, teriyaki sauce, sesame and chili pepper'
 ]
 restaurant_food_item_dessert_info = [
-  'San Sebastián Cheesecake with orange crumbs and pumpkin crunch',
+  'Cheesecake with orange crumbs and pumpkin crunch',
   'Caramel, Chocolate, Vanilla',
   'Lemon, Mango, Forest fruits'
 ]
-#Create main foods
+
+restaurant_food_item_drink_info = [
+  'Absolut raspberry, watermelon and sour apple Schnapps, lemon and lime',
+  'Refreshing cocktail with Bacardi Dragonberry Rum, Exotico Blanco Tequila, mint, lime',
+  'Pineapple infused Vodka, Malibu coconut Rum, and Blue Curacao with pineapple juice'
+]
+
+# Create starters
+
+restaurant2_starters.each_with_index do |name, index|
+  FoodItem.create!(name: name, rating: rand(4..5), price: rand(40..50),
+                   category: "Starter",
+                   description: restaurant_starter_info[index],
+                   restaurant: restaurant2) # connects it to a specific Restaurant!
+end
+
+# Create main foods
+
 restaurant2_main_food_items.each_with_index do |name, index|
   FoodItem.create!(name: name, rating: rand(4..5), price: rand(50..70),
                    category: "Main Course",
                    description: restaurant_main_food_item_info[index],
                    restaurant: restaurant2) # connects it to a specific Restaurant!
 end
-#Create desserts
+
+# Create desserts
 restaurant2_desserts.each_with_index do |name, index|
   FoodItem.create!(name: name, rating: rand(4..5), price: rand(40..50),
                    category: "Dessert",
@@ -160,21 +222,130 @@ restaurant2_desserts.each_with_index do |name, index|
                    restaurant: restaurant2) # connects it to a specific Restaurant!
 end
 
-#create 10 9 orders 3 per resto
+# Create drinks
 
-#Restaurant.all.each do |restaurant|
-  #3.times do
+restaurant2_drinks.each_with_index do |name, index|
+  FoodItem.create!(name: name, rating: rand(3..5), price: rand(30..55),
+                   category: "Drink",
+                   description: restaurant_food_item_drink_info[index],
+                   restaurant: restaurant2) # connects it to a specific Restaurant!
+end
+
+# Food items for restaurant 3
+
+restaurant3_starters = [
+  'Grilled Octopus',
+  'Grilled Chicken Salad',
+  'Spicy Calamari and Spinach Salad'
+]
+
+restaurant3_main_food_items = [
+  'Calamari Meatball',
+  'Parle Style Burger',
+  'Veal Chops',
+  'Fresh Ravioli',
+  'Parle Risotto',
+  'Homemade Fettuchine',
+  'Hot Spicy Chicken Wings',
+  'Beef Cutlet'
+]
+restaurant3_desserts = [
+  'Parle Special Date Pudding',
+  'Ananas Carpaccio',
+  'Creme Brulee'
+]
+
+restaurant3_drinks = [
+  'Miss Daisy',
+  'Tropical Sunset',
+  'Texas Mule'
+]
+
+restaurant_food_item_category = [
+  'drinks',
+  'desserts',
+  'starters',
+  'main courses'
+]
+
+restaurant_starter_info = [
+  'Octopus with sun dried tomatoes, lemon flavored potatoes, lime dressing',
+  'Grilled chicken with smoked eggplant and lettuce with balsamic dressing',
+  'Spinach Salad and calamari with green lentil stew with lemon dressing'
+]
+
+restaurant_main_food_item_info = [
+  'Calamari meatball with lentil stew',
+  'Burger with muhammara sauce, aioli with french fries',
+  'Veal chops with sauteed zucchini, ovenbaked potato with demi glace sauce ',
+  'Ravioli with broiled eggplant, tomato with fresh thyme and butter sauce',
+  'Risotto with ovenbaked porchini mushroom, basil',
+  'Homemade fettuchine with special bolognese sauce',
+  'Chicken Wings with sriracha sauce',
+  'Beef Cutlet and steamed wheat rice with porchini mushroom'
+]
+
+restaurant_food_item_dessert_info = [
+  'Parle pudding with vanilla ice cream and caramel sauce',
+  'Pineapple carpaccio with tropical sorbet, caramelized walnuts, maple Sauce',
+  'Creme brulee with caramelized banana'
+]
+
+restaurant_food_item_drink_info = [
+  'Deep Eddy sweet tea Vodka, Jim Beam peach Bourbon, lemonade, and fresh squeezed lime',
+  'Captain Morgan Spiced Rum, Malibu Coconut Rum, pineapple juice and grenadine',
+  'Fresh squeezed limes and Titos Handmade Vodka perfectly mixed with Barritt’s Ginger Beer'
+]
+
+# Create starters
+
+restaurant3_starters.each_with_index do |name, index|
+  FoodItem.create!(name: name, rating: rand(4..5), price: rand(40..50),
+                   category: "Starter",
+                   description: restaurant_starter_info[index],
+                   restaurant: restaurant3) # connects it to a specific Restaurant!
+end
+# Create main foods
+
+restaurant3_main_food_items.each_with_index do |name, index|
+  FoodItem.create!(name: name, rating: rand(4..5), price: rand(50..70),
+                   category: "Main Course",
+                   description: restaurant_main_food_item_info[index],
+                   restaurant: restaurant3) # connects it to a specific Restaurant!
+end
+
+# Create desserts
+
+restaurant3_desserts.each_with_index do |name, index|
+  FoodItem.create!(name: name, rating: rand(3..5), price: rand(45..55),
+                   category: "Dessert",
+                   description: restaurant_food_item_dessert_info[index],
+                   restaurant: restaurant3) # connects it to a specific Restaurant!
+end
+
+# Create drinks
+
+restaurant3_drinks.each_with_index do |name, index|
+  FoodItem.create!(name: name, rating: rand(3..5), price: rand(40..50),
+                   category: "Drink",
+                   description: restaurant_food_item_drink_info[index],
+                   restaurant: restaurant3) # connects it to a specific Restaurant!
+end
+# create 10 9 orders 3 per resto
+
+# Restaurant.all.each do |restaurant|
+  # 3.times do
     # pick one random user
-    #user = User.all.sample
-    #order = Order.create!(restaurant: restaurant,
+    # user = User.all.sample
+    # order = Order.create!(restaurant: restaurant,
                           #user: user
     #)
 
     # Now create a few order items for the order
-    #rand(1..3).times do
+    # rand(1..3).times do
       # Create an OrderItem...
-    #end
-  #end
-#end
+    # end
+  # end
+# end
 # each order should have 1-3 order items
 puts "Finished!"
