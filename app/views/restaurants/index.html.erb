@@ -1,32 +1,32 @@
-<h2 class="restaurant-list">RESTAURANT'S LIST</h2>
-<p class="restaurant-list"> Choose a restaurant to view more details for booking</p>
-<br>
+<nav class="bg-dark navbar-dark">
+  </nav>
+  <section id="header" class="jumbotron text-center">
+     <h1 class="display-3">RESTAURANT'S LIST</h1>
+     <p class="lead">Choose a restaurant to view more details for booking</p>
+  </section>
 
-
-
+<section id="gallery">
   <div class="container">
+    <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-lg-4 mb-4">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top">
 
-    <div class="grid-3">
-      <% @restaurants.each do |restaurant| %>
+          <div class="card-body">
 
-          <div class="card text-black card-has-bg click-col" style="background-image:url('https://images.unsplash.com/photo-1551218808-94e220e084d2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80');">
-                <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+              <h2><%= restaurant.name %></h2> <br>
+                          <h6>Rating: <%= restaurant.rating %></h6><br>
+                          <h6>Speciality: <%= restaurant.speciality %></h6><br>
+                          <h6>Location: <%= restaurant.location %></h6><br>
+                          <h6>Capacity: <%= restaurant.capacity %> persons</h6><br>
 
-
-                <div class="card-img-overlay d-flex flex-column">
-                  <div class="card-body">
-
-                      <h2><%= restaurant.name %></h2> <br>
-                      <h6>Rating: <%= restaurant.rating %></h6><br>
-                      <h6>Speciality: <%= restaurant.speciality %></h6><br>
-                      <h6>Location: <%= restaurant.location %></h6><br>
-                      <h6>Capacity: <%= restaurant.capacity %> persons</h6><br>
-
-                     <%= link_to 'MENU', restaurant_path(restaurant), class: 'btn chef-btn js-scroll-trigger'%>
-                  </div>
-                </div>
-            </div>
-
+                        <%= link_to 'MENU', restaurant_path(restaurant), class: 'btn chef-btn js-scroll-trigger'%>
+            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+          </div>
+        </div>
+      </div>
       <% end %>
     </div>
   </div>
+</section>
