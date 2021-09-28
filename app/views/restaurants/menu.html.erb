@@ -1,0 +1,31 @@
+  <div class="container">
+
+    <div class="grid-3">
+      <% @food_items.each do |food_item| %>
+
+          <div class="card text-black card-has-bg click-col" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1551218808-94e220e084d2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80');">
+                <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+
+
+                <div class="card-img-overlay d-flex flex-column">
+                  <div class="card-body">
+
+                       <h2><%= food_item.name %></h2> <br>
+                      <h6>Rating: <%= food_item.rating %></h6><br>
+                      <h6>Description: <%= food_item.description %></h6><br>
+                      <h6>Category: <%= food_item.category %></h6><br>
+                      <h6>Price: <%= food_item.price %> TL</h6><br>
+
+                      <%= simple_form_for [@restaurant, @order_item] do |f| %>
+                        <%= f.input :food_item_id, as: :hidden, input_html: { value: "#{food_item.id}" } %>
+                        <%= f.submit "Add Item", class: 'btn chef-btn js-scroll-trigger'%>
+                      <% end %>
+
+                    <%#= link_to 'Add Item', restaurant_order_items_path(@restaurant, @order_item), method: :post, class: 'btn chef-btn js-scroll-trigger'%>
+                  </div>
+                </div>
+            </div>
+
+        <% end %>
+      </div>
+  </div>

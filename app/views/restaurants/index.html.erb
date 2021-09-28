@@ -1,8 +1,7 @@
 <nav class="bg-dark navbar-dark">
   </nav>
-  <section id="header" class="jumbotron text-center">
+  <section id="header" class="jumbotron text-center" style="background-image" linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),>
      <h1 class="display-3">RESTAURANT'S LIST</h1>
-     <p class="lead">Choose a restaurant to view more details for booking</p>
   </section>
 
 <section id="gallery">
@@ -17,12 +16,9 @@
 
               <h2><%= restaurant.name %></h2> <br>
                           <h6><i class="far fa-star"></i> <%= restaurant.rating %></h6><br>
-                          <h6>Speciality: <%= restaurant.speciality %></h6><br>
                           <h6><i class="fas fa-location-arrow"></i> <%= restaurant.location %></h6><br>
-                          <h6>Capacity: <%= restaurant.capacity %> persons</h6><br>
-
-                        <%= link_to 'MENU', restaurant_path(restaurant), class: 'btn chef-btn js-scroll-trigger'%>
-            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+                          <h6>Speciality: <%= restaurant.speciality %></h6><br>
+                        <%= link_to 'MENU', restaurant_path(restaurant), class: 'btn chef-btn btn-lg btn-block js-scroll-trigger'%>
           </div>
         </div>
       </div>
