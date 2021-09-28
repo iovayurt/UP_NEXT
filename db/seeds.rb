@@ -14,16 +14,19 @@ restaurant1 = Restaurant.create!(name: "Vogue Restaurant and Bar",
                                  location: "Besiktas, Istanbul, Turkey",
                                  rating: 4.3,
                                  speciality: "International",
+                                 photo_url: "http://cdn2.gcprive.co.uk/wp-content/uploads/2013/07/sunset-bargrill-bar-sunset.jpg",
                                  capacity: 150)
 restaurant2 = Restaurant.create!(name: "Sunset Grill and Bar",
                                  location: "Nisantasi, Istanbul, Turkey",
                                  rating: 4.6,
                                  speciality: "Mediterranean",
+                                 photo_url: "https://voguecdn.blob.core.windows.net/files/img/article_detail/19-07/31/vogue-istanbul-sunset-grill-bar.jpg",
                                  capacity: 170)
 restaurant3 = Restaurant.create!(name: "Parle",
                                  location: "Kadikoy, Istanbul, Turkey",
                                  rating: 4.7,
                                  speciality: "International Gourmet",
+                                 photo_url: "https://dishadvisor.com/assets/uploads/2019/04/5c466de1-9773-4697-bba7-1a9fff505078.jpg",
                                  capacity: 50)
 
 [restaurant1, restaurant2, restaurant3].each do |restaurant|
