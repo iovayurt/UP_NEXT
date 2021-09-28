@@ -10,7 +10,7 @@ user1 = User.create!(first_name: "Ilyas", last_name: "Ovayurt", password: "passw
 user2 = User.create!(first_name: "Begum", last_name: "Ozpeker", password: "password", email: "begum@begum.com")
 user3 = User.create!(first_name: "Aziz", last_name: "Alansari", password: "password", email: "aziz@aziz.com")
 
-restaurant1 = Restaurant.create!(name: "Vogue Restaurant and Bar",
+restaurant1 = Restaurant.create!(name: "Vogue Restaurant",
                                  location: "Besiktas, Istanbul, Turkey",
                                  rating: 4.3,
                                  speciality: "International",
