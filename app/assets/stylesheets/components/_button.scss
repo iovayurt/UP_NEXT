@@ -3,7 +3,7 @@
 }
 
 .btn {
-  background-color: #e2e2e2;
+  background-color: #ff4c4b;
 }
 
 .btn:hover {
@@ -18,4 +18,11 @@
 }
 .btn.btn-view{
   margin-top: 10px;
+}
+
+.btn-add-item {
+  border-radius: 0 0 8px 8px;
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }

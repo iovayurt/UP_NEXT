@@ -1,7 +1,7 @@
 <div class="card-body dashboard">
   <h5 class="card-meta mb-2">My Reservations</h5>
   <h6>Booked Restaurant: <%= order.restaurant.name %> </h6>
-  <h6>Reservation Name: <%= order.reservation_name %></h6>
+  <h6>Reservation Name: <%= order.reservation_name %></h6><br>
   <h6>Reservation Time: <%= order.reservation_time %></h6>
   <h6>Your Order:
     <% order.order_items.each do |order_item| %>
