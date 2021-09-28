@@ -8,14 +8,15 @@
 }
 
 input[type="text"] {
-    width: 40%;
-    height: 40px;
-    font-size: 15px;
-    line-height: 1;
-    align-items: center;
+  width: 40%;
+  height: 40px;
+  font-size: 15px;
+  line-height: 1;
+  align-items: center;
 }
 
 .card{
+  height: 630px;
   border: none;
   transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
   overflow:hidden;
@@ -23,6 +24,7 @@ input[type="text"] {
   min-height:450px;
   box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
   margin-bottom: 15px;
+  background-color: rgba(46, 44, 44, 0.2);
 
 
  @media (max-width: 768px) {
