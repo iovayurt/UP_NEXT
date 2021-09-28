@@ -9,13 +9,13 @@
     <div class="grid-3">
       <% @restaurants.each do |restaurant| %>
 
-          <div class="card text-black card-has-bg click-col" style="background-image:url('https://images.unsplash.com/photo-1551218808-94e220e084d2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80');">
+          <div class="card text-black card-has-bg click-col" style="background-image:url(<%= restaurant.photo_url %>);">
                 <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
 
 
                 <div class="card-img-overlay d-flex flex-column">
                   <div class="card-body">
-
+                       <img src="<%= restaurant.photo_url %>" alt="">
                       <h2><%= restaurant.name %></h2> <br>
                       <h6>Rating: <%= restaurant.rating %></h6><br>
                       <h6>Speciality: <%= restaurant.speciality %></h6><br>
