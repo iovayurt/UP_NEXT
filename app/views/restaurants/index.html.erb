@@ -1,28 +1,26 @@
 <nav class="bg-dark navbar-dark">
   </nav>
-  <section id="header" class="jumbotron text-center" style="background-image" linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),>
-     <h1 class="display-3">RESTAURANT'S LIST</h1>
+  <section id="header" class="jumbotron text-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.creativemarket.com/0.1.0/ps/1907678/1360/832/m1/fpnw/wm1/yx2ta58ruuzdibjrr6nhj2spdwp4q2hn8ayx1e6hqbwew3pt8ennfhrztdgjh2wj-.jpg?1479349334&s=10f360a69d05f809ca5fb4cc9a2a173c);">
+     <h1 class="display-3">RESTAURANTS</h1>
   </section>
 
-<section id="gallery">
-  <div class="container">
-    <div class="row">
-    <% @restaurants.each do |restaurant| %>
-      <div class="col-lg-4 mb-4">
-        <div class="card">
-          <img src="<%= restaurant.photo_url %>" alt="" class="card-img-top">
+<div class="container">
+    <div class="grid-3">
+      <% @restaurants.each do |restaurant| %>
+          <div class="card card-has-bg card-restaurant" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= restaurant.photo_url %>)">
+                <img class="card-img d-none" src="<%= restaurant.photo_url %>" alt="" class="card-img-top">
+                <div class="card-img-overlay d-flex flex-column">
+                  <div class="card-body">
+                    <h2><%= restaurant.name %></h2> <br>
+                    <h6><i class="far fa-star"></i> <%= restaurant.rating %></h6><br>
+                    <h6><i class="fas fa-location-arrow"></i> <%= restaurant.location %></h6><br>
+                    <h6>Speciality: <%= restaurant.speciality %></h6><br>
 
-          <div class="card-body">
+                  </div>
 
-              <h2><%= restaurant.name %></h2> <br>
-                          <h6><i class="far fa-star"></i> <%= restaurant.rating %></h6><br>
-                          <h6><i class="fas fa-location-arrow"></i> <%= restaurant.location %></h6><br>
-                          <h6>Speciality: <%= restaurant.speciality %></h6><br>
-                        <%= link_to 'MENU', restaurant_path(restaurant), class: 'btn chef-btn btn-lg btn-block js-scroll-trigger'%>
+                </div>
+               <%= link_to 'MENU', restaurant_path(restaurant), class: 'btn chef-btn btn-lg btn-block js-scroll-trigger btn-menu btn-restaurant'%>
           </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</section>
+    <% end %>
+   </div>
+</div>

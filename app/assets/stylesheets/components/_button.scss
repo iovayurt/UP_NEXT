@@ -3,9 +3,17 @@
 }
 
 .btn {
-  background-color: #ff4c4b;
+  background-color: rgb(207, 37, 37);
 }
 
+.btn-main{
+  width: 88%;
+  color: white;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  font-size: 20px;
+  letter-spacing: 0.08rem;
+}
 .btn:hover {
   background-color: rgb(230, 230, 230);
 }
@@ -25,4 +33,17 @@
   color: white;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.btn-menu {
+  border-radius: 0 0 8px 8px;
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+.btn-restaurant {
+  position: absolute;
+  bottom: 0;
 }

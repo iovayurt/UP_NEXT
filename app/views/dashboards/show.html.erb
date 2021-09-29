@@ -1,10 +1,28 @@
-<h1>My Orders</h1>
+<nav class="bg-dark navbar-dark">
+  </nav>
+  <section id="header-dashboard" class="jumbotron text-center" style="background-image" linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),>
+     <h1 class="display-3">RESERVATIONS</h1>
+  </section>
+
 <div class="tab-content" id="myTabContent">
   <div class="container">
     <section class="wrapper">
-      <% @orders.each do |order| %>
-          <%= render "shared/order_card", order: order %>
-      <% end %>
+
     </section>
   </div>
 </div>
+
+
+<% @orders.each do |order| %>
+  <div class="card-trip">
+    <img src= "<%= order.restaurant.photo_url %>" />
+    <div class="card-trip-infos">
+      <div>
+
+            <%= render "shared/order_card", order: order %>
+
+      </div>
+      <h2 class="card-trip-pricing"></h2>
+    </div>
+  </div>
+<% end %>

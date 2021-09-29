@@ -4,7 +4,9 @@
 }
 
 .card-body {
-  margin-bottom: 175px;
+  margin-bottom: 6rem;
+  min-height: 1px;
+  padding: 2rem;
 }
 
 input[type="text"] {
@@ -34,4 +36,11 @@ input[type="text"] {
 @media (max-width: 420px) {
   min-height:300px;
 }
+}
+
+
+.card-restaurant {
+  background-size: cover;
+  color: white;
+  height: 48vh;
 }

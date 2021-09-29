@@ -5,9 +5,8 @@
 }
 
 .back-ground {
-  height: 100%;
+  height: 70vh;
   margin-top: 100px;
-
 }
 
 .home-div {
@@ -26,6 +25,11 @@ body
 {
   margin: 0;
   background-color: #ffffff;
+}
+
+#query{
+  width: 88%;
+  border-radius: 8px;
 }
 
 .tb
@@ -87,4 +91,5 @@ button
 
 .homepar {
   color: rgb(224, 224, 224);
+  padding: 2rem;
 }
