@@ -3,7 +3,7 @@
 }
 
 .btn {
-  background-color: #ff4c4b;
+  background-color: rgb(207, 37, 37);
 }
 
 .btn:hover {
@@ -21,6 +21,13 @@
 }
 
 .btn-add-item {
+  border-radius: 0 0 8px 8px;
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.btn-menu {
   border-radius: 0 0 8px 8px;
   color: white;
   padding-top: 1rem;
