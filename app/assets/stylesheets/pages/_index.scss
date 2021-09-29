@@ -1,6 +1,14 @@
 // Import page-specific CSS files here.
 @import "home";
 
+h1 {
+  font-family: 'Cinzel', serif;
+}
+
+p, h2, h6 {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 body {
   background-color:rgb(255, 255, 255) ;
 }
