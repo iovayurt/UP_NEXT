@@ -1,6 +1,5 @@
 <div class="card-body dashboard">
-  <h5 class="card-meta mb-2">My Reservations</h5>
-  <h6>Booked Restaurant: <%= order.restaurant.name %> </h6>
+  <h4><%= order.restaurant.name %> </h4>
   <h6>Reservation Name: <%= order.reservation_name %></h6><br>
   <h6>Reservation Time: <%= order.reservation_time %></h6>
   <h6>Your Order:
@@ -8,12 +7,13 @@
       - <%= order_item.food_item.name %>
     <% end %>
   </h6>
-  <h6>Total Amount: <%= order.calculate_total_price %> TL</h6>
+
   <h6>Reservation Note: <%= order.notes %></h6>
   <%= simple_form_for order do |f| %>
     <%= f.input :reservation_time %>
     <%= f.input :reservation_name %>
     <%= f.input :notes %>
+    <h5>Total Amount: <%= order.calculate_total_price %> TL</h5>
     <%= f.submit class: "btn" %>
      <%= link_to 'Delete Order', order_path(order), class: "btn", confirm: 'Are you sure?', method: :delete %>
   <% end %>
