@@ -2,12 +2,13 @@
   <h4><%= order.restaurant.name %> </h4>
   <h6>Reservation Name: <%= order.reservation_name %></h6><br>
   <h6>Reservation Time: <%= order.reservation_time %></h6>
-  <h6>Your Order:
+  <h6><strong>Your Order:</strong><br>
     <% order.order_items.each do |order_item| %>
-      - <%= order_item.food_item.name %>
+      <ul>
+        <li><%= order_item.food_item.name %></li>
+      </ul>
     <% end %>
   </h6>
-
   <h6>Reservation Note: <%= order.notes %></h6>
   <% if order.reservation_time.nil?%>
     <div class="mb-form">
@@ -16,10 +17,9 @@
         <%= f.input :reservation_name %>
         <%= f.input :notes %>
         <h5>Total Amount: <%= order.calculate_total_price %> TL</h5>
-        <%= f.submit "Submit Reservation", class: "btn" %>
+        <%= f.submit "Submit Reservation", class: "btn-green" %>
       <% end %>
     </div>
   <% end %>
-
-  <%= link_to 'Delete Order', order_path(order), class: "btn", confirm: 'Are you sure?', method: :delete %>
+  <%= link_to 'Delete Order', order_path(order), class: "btn-delete", confirm: 'Are you sure?', method: :delete %>
 </div>
