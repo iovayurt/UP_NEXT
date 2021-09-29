@@ -2,7 +2,8 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 1000px;
+  margin-bottom: 0;
+  // height: 1000px;
 }
 
 .card-trip > img {
@@ -37,4 +38,9 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+
+.mb-form {
+  margin-bottom: 20rem;
 }
