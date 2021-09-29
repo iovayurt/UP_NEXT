@@ -9,12 +9,17 @@
   </h6>
 
   <h6>Reservation Note: <%= order.notes %></h6>
-  <%= simple_form_for order do |f| %>
-    <%= f.input :reservation_time %>
-    <%= f.input :reservation_name %>
-    <%= f.input :notes %>
-    <h5>Total Amount: <%= order.calculate_total_price %> TL</h5>
-    <%= f.submit class: "btn" %>
-     <%= link_to 'Delete Order', order_path(order), class: "btn", confirm: 'Are you sure?', method: :delete %>
+  <% if order.reservation_time.nil?%>
+    <div class="mb-form">
+      <%= simple_form_for order do |f| %>
+        <%= f.input :reservation_time, as: :datetime, html5: true %>
+        <%= f.input :reservation_name %>
+        <%= f.input :notes %>
+        <h5>Total Amount: <%= order.calculate_total_price %> TL</h5>
+        <%= f.submit "Submit Reservation", class: "btn" %>
+      <% end %>
+    </div>
   <% end %>
+
+  <%= link_to 'Delete Order', order_path(order), class: "btn", confirm: 'Are you sure?', method: :delete %>
 </div>
