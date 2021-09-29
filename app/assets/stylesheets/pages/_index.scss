@@ -26,7 +26,7 @@ body {
 
 .header-restaurant {
   margin-top: 0px;
-  background-color: gray;
+  background-color: #6b1717b5;
 }
 
 .display-3 {
@@ -44,4 +44,10 @@ body {
 
 .card-img-top {
   height: 250px;
+}
+
+#header-restaurant-2 {
+  background-size: cover;
+  background-position: center;
+  height: 23vh;
 }
