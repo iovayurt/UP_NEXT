@@ -26,7 +26,7 @@ restaurant3 = Restaurant.create!(name: "Parle",
                                  location: "Kadikoy, Istanbul, Turkey",
                                  rating: 4.7,
                                  speciality: "International Gourmet",
-                                 photo_url: "https://dishadvisor.com/assets/uploads/2019/04/5c466de1-9773-4697-bba7-1a9fff505078.jpg",
+                                 photo_url: "https://images.wallpaperscraft.com/image/single/restaurant_cafe_appliances_tables_chairs_interior_design_39216_1920x1080.jpg",
                                  capacity: 50)
 
 [restaurant1, restaurant2, restaurant3].each do |restaurant|
