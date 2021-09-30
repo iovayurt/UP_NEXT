@@ -1,30 +1,30 @@
 <div class="card-body dashboard">
   <h4><%= order.restaurant.name %> </h4>
-  <h6>Reservation Name: <%= order.reservation_name %></h6><br>
-  <h6>Reservation Time: <%= order.reservation_time %></h6>
-  <h6><strong>Your Order:</strong><br>
+  <h6>RESERVATION NAME: <br> <%= order.reservation_name %></h6>
+  <h6>RESERVATION TIME: <br> <%= order.reservation_time %></h6>
+  <h6><strong>YOUR ORDER:</strong><br>
     <% order.order_items.each do |order_item| %>
       <ul>
         <li><%= order_item.food_item.name %></li>
       </ul>
     <% end %>
   </h6>
-  <h6>Reservation Note: <%= order.notes %></h6>
+  <h6>RESERVATION NOTE: <%= order.notes %></h6>
   <% if order.reservation_time.nil?%>
     <div class="mb-form">
       <%= simple_form_for order do |f| %>
         <%= f.input :reservation_time, as: :datetime, html5: true %>
         <%= f.input :reservation_name %>
         <%= f.input :notes %>
-        <h5>Total Amount: <%= order.calculate_total_price %> TL</h5>
+        <h5>TOTAL AMOUNT: <%= order.calculate_total_price %> TL</h5>
         <div class="btn-dash-submit">
-          <%= f.submit "Submit Reservation", class: "btn-green" %>
+          <%= f.submit "SUBMIT RESERVATION", class: "btn-green btn-lg btn-block" %>
         </div>
       <% end %>
     </div>
   <% end %>
   <br>
   <div class="btn-dash-submit">
-    <%= link_to 'Delete Order', order_path(order), class: "btn-delete", confirm: 'Are you sure?', method: :delete %>
+    <%= link_to 'DELETE ORDER', order_path(order), class: "btn-delete btn-lg btn-block", confirm: 'Are you sure?', method: :delete %>
   </div>
 </div>
