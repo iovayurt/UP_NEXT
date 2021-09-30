@@ -17,9 +17,13 @@
         <%= f.input :reservation_name %>
         <%= f.input :notes %>
         <h5>Total Amount: <%= order.calculate_total_price %> TL</h5>
-        <%= f.submit "Submit Reservation", class: "btn-green" %>
+        <div class="btn-dash-submit">
+          <%= f.submit "Submit Reservation", class: "btn-green" %>
+        </div>
       <% end %>
     </div>
   <% end %>
-  <%= link_to 'Delete Order', order_path(order), class: "btn-delete", confirm: 'Are you sure?', method: :delete %>
+  <div class="btn-dash-submit">
+    <%= link_to 'Delete Order', order_path(order), class: "btn-delete", confirm: 'Are you sure?', method: :delete %>
+  </div>
 </div>

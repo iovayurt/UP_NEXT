@@ -2,11 +2,16 @@
 @import "home";
 
 h1 {
-  font-family: 'Cinzel', serif;
+//font-family: 'Cinzel', serif;
+//font-family: 'Montserrat', sans-serif;
+font-family: 'Varela Round', sans-serif;
 }
 
 p, h2, h6 {
-  font-family: 'Ubuntu', sans-serif;
+//font-family: 'Lato', sans-serif;
+//font-family: 'Montserrat', sans-serif;
+//font-family: 'Poppins', sans-serif;
+font-family: 'Varela Round', sans-serif;
 }
 
 body {
@@ -31,7 +36,7 @@ body {
 
 .header-restaurant {
   margin-top: 0px;
-  background-color: #6b1717b5;
+  background-color: firebrick;
 }
 
 .display-3 {
@@ -40,6 +45,13 @@ body {
   line-height: 1.2;
   font-size: 1.2rem;
 }
+
+.display-33 {
+  font-size: 2rem;
+  color: white;
+  margin-top: 1.3rem;
+}
+
 .show-name{
   color: white;
   font-weight: 300;
