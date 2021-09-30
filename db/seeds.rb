@@ -14,7 +14,7 @@ restaurant1 = Restaurant.create!(name: "Vogue Restaurant",
                                  location: "Besiktas, Istanbul, Turkey",
                                  rating: 4.3,
                                  speciality: "International",
-                                 photo_url: "http://cdn2.gcprive.co.uk/wp-content/uploads/2013/07/sunset-bargrill-bar-sunset.jpg",
+                                 photo_url: "https://heytripster.com/wp-content/uploads/2020/05/the-best-restaurants-in-istanbul-min.jpg",
                                  capacity: 150)
 restaurant2 = Restaurant.create!(name: "Sunset Grill and Bar",
                                  location: "Nisantasi, Istanbul, Turkey",
