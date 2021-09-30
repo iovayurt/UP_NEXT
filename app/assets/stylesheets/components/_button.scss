@@ -1,9 +1,12 @@
 .btn {
   border-radius: 6px;
+  font-family: 'Mukta Malar', sans-serif;
+  text-align: center;
 }
 
 .btn {
-  background-color: rgb(207, 37, 37);
+  background-color: #8c0d00;
+  font-size: 24px;
 }
 
 .btn-main{
@@ -11,7 +14,6 @@
   color: white;
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
-  font-size: 20px;
   letter-spacing: 0.08rem;
 }
 .btn:hover {
@@ -52,12 +54,13 @@
   padding: 0.7rem;
   border-radius: 8px 8px 8px 8px;
   margin-bottom: 2rem;
+  text-align: center;
 }
 .btn-delete {
-  background-color: #fa3f3f;
+  background-color: #8c0d00;
   padding: 0.7rem;
   border-radius: 8px 8px 8px 8px;
   color: #fff;
   margin-top: 10px;
-  padding-left: 4rem;
+  text-align: center;
 }

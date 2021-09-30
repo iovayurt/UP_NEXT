@@ -1,27 +1,29 @@
 <div class="card-body dashboard">
-  <h4><%= order.restaurant.name %> </h4>
-  <h6>RESERVATION NAME: <br> <%= order.reservation_name %></h6>
-  <h6>RESERVATION TIME: <br> <%= order.reservation_time %></h6>
-  <h6><strong>YOUR ORDER:</strong><br>
+  <h3 class="mb-4"><%= order.restaurant.name.upcase %> </h3>
+  <h6 class="mb-4"><strong>RESERVATION NAME</strong><br> <%= order.reservation_name %></h6>
+  <h6 class="mb-4"><strong>RESERVATION TIME</strong><br> <%= order.reservation_time.strftime("%a, %d %b %Y") if order.reservation_time%></h6>
+  <h6 class="mb-4"><strong>YOUR ORDER</strong><br>
     <% order.order_items.each do |order_item| %>
       <ul>
-        <li><%= order_item.food_item.name %></li>
+        <p><i class="fas fa-utensils mr-2"></i><%= order_item.food_item.name %></p>
       </ul>
     <% end %>
   </h6>
-  <h6>RESERVATION NOTE: <%= order.notes %></h6>
+  <h6 class="mb-4"><strong>RESERVATION NOTE</strong> <br> <%= order.notes %></h6>
   <% if order.reservation_time.nil?%>
-    <div class="mb-form">
+    <div class="mb-form mt-5">
       <%= simple_form_for order do |f| %>
         <%= f.input :reservation_time, as: :datetime, html5: true %>
         <%= f.input :reservation_name %>
         <%= f.input :notes %>
-        <h5>TOTAL AMOUNT: <%= order.calculate_total_price %> TL</h5>
+        <h4><strong>TOTAL AMOUNT</strong> <%= order.calculate_total_price %> TL</h4>
         <div class="btn-dash-submit">
           <%= f.submit "SUBMIT RESERVATION", class: "btn-green btn-lg btn-block" %>
         </div>
       <% end %>
     </div>
+  <% else %>
+    <h6 class="mb-4"><strong>RESERVATION STATUS</strong> <br> Confirmed </h6>
   <% end %>
   <br>
   <div class="btn-dash-submit">

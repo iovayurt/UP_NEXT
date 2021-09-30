@@ -16,7 +16,7 @@
 <% @orders.each do |order| %>
   <div class="card-trip">
     <img src= "<%= order.restaurant.photo_url %>" />
-    <div class="card-trip-infos">
+    <div>
       <div>
 
             <%= render "shared/order_card", order: order %>
