@@ -81,10 +81,11 @@ body {
 
 .card-img-top {
   height: 250px;
+  object-fit: cover;
 }
 
 #header-restaurant-2 {
   background-size: cover;
   background-position: center;
-  height: 23vh;
+  height: 25vh;
 }

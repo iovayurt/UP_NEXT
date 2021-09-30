@@ -62,7 +62,7 @@ restaurant1_main_food_items = [
 
 restaurant1_main_food_items_photos = [
 
-  'https://www.weschenfelder.co.uk/media/catalog/product/cache/99cc3f05f3332bcae6956cb4c448db7e/a/m/american_burger_.png',
+  'https://p4.wallpaperbetter.com/wallpaper/369/512/1004/pepper-hamburger-burger-mcdonald-s-wallpaper-preview.jpg',
   'https://images.ctfassets.net/uexfe9h31g3m/6QtnhruEFi8qgEyYAICkyS/f973f88dd3505b70b417e0af33460ab5/SPAGHETTI-BOLOGNESE-2.jpg?w=2000&h=1500&fm=jpg&fit=thumb&q=90&fl=progressive',
   'https://pinchofyum.com/wp-content/uploads/mushroom-spaghetti-recipe-1.jpg',
   'https://static01.nyt.com/images/2019/02/12/dining/sl-eggplant-rigatoni/sl-eggplant-rigatoni-articleLarge.jpg',
@@ -200,7 +200,7 @@ restaurant2_main_food_items = [
 restaurant2_main_food_items_photos = [
 
 'https://assets.epicurious.com/photos/596d187f09c9df719089f1df/1:1/w_775%2Cc_limit/Weekend-Warrior-How-To-Make-Homemade-Pasta-071310172455.jpg',
-'https://res.cloudinary.com/hksqkdlah/image/upload/ar_1:1,c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_344/29743_sfs-grilled-pork-tenderloin-with-tomato-onion-salad-011',
+'https://kitchenswagger.com/wp-content/uploads/2019/06/grilled-filet-mignon1.jpg',
 'https://omnivorescookbook.com/wp-content/uploads/2017/05/1705_Chinese-Crispy-Duck-Breast_003.jpg',
 'https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2019/07/09151502/tbone_steak_wide.jpg',
 'https://prairiemeats.ca/wp-content/uploads/2019/11/023097-Ribeye-Steak-beef-stock.jpg',
@@ -208,6 +208,7 @@ restaurant2_main_food_items_photos = [
 'https://infra-recipesepi-prod-cdn.azureedge.net/497f8b/contentassets/91f209429cea41478810b2cdbd6fde2d/full_spicy-grilled-norwegian-salmon.jpg?width=1112&height=554&transform=DownFill&hash=452b79474648dafd7379a9b8df8551c1',
 'https://www.teaforturmeric.com/wp-content/uploads/2017/06/Spinach-and-Potato-Curry-728x1092.jpg'
 ]
+
 restaurant2_desserts = [
   'Sunset Cheesecake',
   'Ice Cream',
