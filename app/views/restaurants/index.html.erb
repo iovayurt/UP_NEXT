@@ -1,14 +1,14 @@
 <nav class="bg-dark navbar-dark">
   </nav>
-  <section id="header" class="jumbotron text-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.creativemarket.com/0.1.0/ps/1907678/1360/832/m1/fpnw/wm1/yx2ta58ruuzdibjrr6nhj2spdwp4q2hn8ayx1e6hqbwew3pt8ennfhrztdgjh2wj-.jpg?1479349334&s=10f360a69d05f809ca5fb4cc9a2a173c);">
-     <h1 class="display-33">RESTAURANTS</h1>
+  <section id="header" class="text-center mb-5">
+     <h1 class="display-333">RESTAURANTS</h1>
   </section>
 
 <div class="container">
     <div class="grid-3">
       <% @restaurants.each do |restaurant| %>
         <%= link_to restaurant_path(restaurant) do %>
-          <div class="card card-has-bg card-restaurant" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= restaurant.photo_url %>)">
+          <div class="card card-has-bg card-restaurant mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= restaurant.photo_url %>)">
                 <div class="card-img-overlay menu-card d-flex flex-column">
                   <div class="card-body card-restaurant-body">
                     <h2><%= restaurant.name %></h2> <br>

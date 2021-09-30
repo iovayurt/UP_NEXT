@@ -1,10 +1,10 @@
 <div class="back-ground">
-    <h1 class="hometitle">➔UP NEXT</h1>
+    <h1 class="hometitle">➔ UP NEXT</h1>
     <p class="homepar">
       Do you want your meal ready in front of you when you go to the restaurant? <br>
       Up-Next is just for you</p>
     <div>
-      <%= form_tag restaurants_path, method: :get do %>
+      <%= form_tag restaurants_path, method: :get, class:"form-home" do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
