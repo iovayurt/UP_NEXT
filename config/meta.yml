@@ -1,0 +1,8 @@
+meta_product_name: "Up Next"
+meta_title: "Up Next - Restaurant Made Easy"
+meta_description: "1.Find your favourite restaurant
+2.Create your order from the menu
+3.Send your order & book your table
+4.Take a seat and get served easily!"
+meta_image: "logo5.png" # should exist in `app/assets/images/`
+twitter_account: "@upnext"   # required for Twitter Cards
